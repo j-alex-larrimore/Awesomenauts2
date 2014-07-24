@@ -79,8 +79,8 @@ var game = {
         me.state.CHARSELECT = 111;
         me.state.SPENDEXP = 112;
         //me.state.SPENDGOLD = 113;
-        //me.state.NEWPROFILE = 114;
-        //me.state.LOADPROFILE = 115;
+        me.state.NEWPROFILE = 114;
+        me.state.LOADPROFILE = 115;
                 
         me.sys.pauseOnBlur = false;             ///Need this and the next line to keep the game from unpausing when you switch to other tabs in your browser
         me.sys.resumeOnFocus = false;
@@ -140,8 +140,8 @@ var game = {
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 me.input.bindKey(me.input.KEY.LEFT, "left");
                 me.input.bindKey(me.input.KEY.SPACE, "jump");
-                me.input.bindKey(me.input.KEY.A, "attack");
                 me.input.bindKey(me.input.KEY.TAB, "toggleMap");
+                me.input.bindKey(me.input.KEY.A, "attack");
                 me.input.bindKey(me.input.KEY.P, "pause");
                 me.input.bindKey(me.input.KEY.B, "buy");
                 me.input.bindKey(me.input.KEY.Q, "Q");
@@ -150,6 +150,6 @@ var game = {
                 me.input.bindKey(me.input.KEY.DOWN, "down");
             
             // Start the game.
-		me.state.change(me.state.MENU);
+		me.state.change(me.state.MENU);  
 	}
 };

@@ -80,6 +80,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
        this.last = new Date().getTime();
        this.now = new Date().getTime();
        this.lastHit = new Date().getTime();
+       this.fallTime = new Date().getTime();
        this.dead = false;
        this.facing = "right";
        this.type = "PlayerEntity";
@@ -97,6 +98,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
        this.penetrate = false; //used for archer's first skill
        
        this.collidable = true;
+       
+       this.fallThrough = false;
               
        if(game.data.exp3 === 1){
            this.attack += 5;
@@ -320,20 +323,15 @@ game.PlayerEntity = me.ObjectEntity.extend({
            this.useAbility(3, this.ability3);
        }
        
-       if(me.input.isKeyPressed("down")){    
-//           var layer = me.game.currentLevel.getLayerByName("collision");
-//           var tile = layer.getTile(this.pos.x, this.pos.y + 65);
-//           var tileProperties = layer.tileset.getTileProperties(tile.tileID); //
-//           //var tile = layer.layerData(this.pos.x, this.pos.y + 65); //says layer.layerData is not a function
-//           //var tile = layer.layerData[this.pos.x][this.pos.y+65]; //returns nothing
-//           
-//           
-//           console.log("Tile?" + tileProperties.type === "platform"); //says tileProperties is undefined
-//           //console.log("Tile?" + layer.tileset.getTileId(this.pos.x, this.pos.y + 65)); //says layer.tileset.getTileId is not a function
-//       
-//           if(tileProperties.type === "platform"){
-//               this.pos.y += 10;
-//           }
+       if(me.input.isKeyPressed("down")){
+           //me.fallThrough = true;
+            this.fallThrough = true;
+            this.fallTime = this.now;
+
+       }
+       
+       if(this.fallThrough && this.now-this.fallTime>500){
+           this.fallThrough = false;
        }
        
        if(me.input.isKeyPressed("jump") && !this.jumping && !this.falling){

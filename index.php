@@ -10,8 +10,13 @@
 		<!-- Canvas placeholder -->
 		<div id="screen"></div>
 
+                <form name="data" id="input">
+                    Username: <input type="text" name="Username">
+                    Password: <input type="text" name="Password">
+                </form>
+                
 		<!-- melonJS Library -->
-		<script type="text/javascript" src="lib/melonJS-1.0.1.js"></script>
+		<script type="text/javascript" src="lib/melonJS-1.0.2.js"></script>
 
 		<!-- Plugin(s) -->
 		<script type="text/javascript" src="lib/plugins/debugPanel.js"></script>

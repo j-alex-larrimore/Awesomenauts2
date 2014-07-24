@@ -27,6 +27,13 @@ game.PlayScreen = me.ScreenObject.extend({
 		this.HUD = new game.HUD.Container();
 		me.game.world.addChild(this.HUD);
                 
+                me.input.bindKey(me.input.KEY.A, "attack");
+                me.input.bindKey(me.input.KEY.P, "pause");
+                me.input.bindKey(me.input.KEY.B, "buy");
+                me.input.bindKey(me.input.KEY.Q, "Q");
+                me.input.bindKey(me.input.KEY.W, "W");
+                me.input.bindKey(me.input.KEY.E, "E");
+                
 	},
 
 

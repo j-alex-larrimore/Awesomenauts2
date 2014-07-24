@@ -32,11 +32,16 @@ body {
 	-ms-interpolation-mode: nearest-neighbor;
 }
 
-#screen {
+#input{
+    text-align: center;
+    visibility: hidden;
+}
+
+/*#screen {
     position: relative;
 }
 
 #screen input {
     position: absolute;
     z-index: 100;
-}
+}*/
