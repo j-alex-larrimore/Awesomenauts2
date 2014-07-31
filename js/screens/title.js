@@ -15,10 +15,6 @@ game.TitleScreen = me.ScreenObject.extend({
                     this.font = new me.BitmapFont("32x32_font", 32);
                     me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
                 },
-                        
-                update: function(dt){
-                    return true;
-                },
                 
                 draw: function(context){
                     //this.font.draw(context, "PRESS ENTER TO START A NEW GAME", 20, 240);

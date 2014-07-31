@@ -1,19 +1,19 @@
-body {
+body{
 	background-color: #000;
 	color: #fff;
 
-	/* Allow mouse dragging. */
+/*	 Allow mouse dragging. */
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-o-user-select: none;
 	-webkit-user-select: none;
 	user-select: none;
 	
-	/* disable touch panning/zooming */
+/*	 disable touch panning/zooming */
 	-ms-touch-action: none;
 	touch-action: none;
 
-	/* Allow canvas to hit the edges of the browser viewport. */
+/*	 Allow canvas to hit the edges of the browser viewport. */
 	margin: 0;
 }
 
@@ -33,8 +33,35 @@ body {
 }
 
 #input{
+    display: block;
     text-align: center;
     visibility: hidden;
+}
+
+#load{
+    position: absolute;
+    visibility: hidden;
+}
+
+#save{
+    display: inline-block;
+    text-align: center;
+    visibility: hidden;
+}
+
+#register{
+    position: absolute;
+    visibility: hidden;
+}
+
+#passAgain{
+    visibility: hidden;
+}
+
+#state{
+    display: block;
+    visibility: hidden;
+/*    visibility: hidden;*/
 }
 
 /*#screen {

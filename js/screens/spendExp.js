@@ -13,6 +13,12 @@ game.SpendExp = me.ScreenObject.extend({
             //me.input.bindPointer(me.input.mouse.LEFT, "select");
             console.log("SpendEXP");
             
+            game.data.exp = parseFloat(document.getElementById("exp").value);            //Awesomenauts 2 saving
+            game.data.exp1 = parseFloat(document.getElementById("exp1").value);
+            game.data.exp2 = parseFloat(document.getElementById("exp2").value); 
+            game.data.exp3 = parseFloat(document.getElementById("exp3").value); 
+            game.data.exp4 = parseFloat(document.getElementById("exp4").value);
+            
             me.game.world.addChild( new (me.Renderable.extend ({
                         init: function(){
                             this.parent(new me.Vector2d(0, 0), 1, 1);
@@ -116,88 +122,89 @@ game.SpendExp = me.ScreenObject.extend({
             this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {                
                 if (action === "F1") {
                     if(game.data.exp1 === 0 && game.data.exp >= 10){
-                        game.data.exp1 += 1;
+                        game.data.exp1++;
                         game.data.exp -= 10;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp1 === 1 && game.data.exp >= 20){
-                        game.data.exp1 += 1;
+                        game.data.exp1++;
                         game.data.exp -= 20;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp1 === 2 && game.data.exp >= 30){
-                        game.data.exp1 += 1;
+                        game.data.exp1++;
                         game.data.exp -= 30;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp1 === 3 && game.data.exp >= 40){
-                        game.data.exp1 += 1;
+                        game.data.exp1++;
                         game.data.exp -= 40;
                         me.state.change(me.state.CHARSELECT);
                     }
                 }
                 else if(action === "F2"){
                     if(game.data.exp2 === 0 && game.data.exp >= 10){
-                        game.data.exp2 += 1;
+                        game.data.exp2++;
                         game.data.exp -= 10;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp2 === 1 && game.data.exp >= 20){
-                        game.data.exp2 += 1;
+                        game.data.exp2++;
                         game.data.exp -= 20;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp2 === 2 && game.data.exp >= 30){
-                        game.data.exp2 += 1;
+                        game.data.exp2++;
                         game.data.exp -= 30;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp2 === 3 && game.data.exp >= 40){
-                        game.data.exp2 += 1;
+                        game.data.exp2++;
                         game.data.exp -= 40;
                         me.state.change(me.state.CHARSELECT);
                     }
                 }
                 else if(action === "F3"){
                     if(game.data.exp3 === 0 && game.data.exp >= 10){
-                        game.data.exp3 += 1;
+                        game.data.exp3++;
                         game.data.exp -= 10;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp3 === 1 && game.data.exp >= 20){
-                        game.data.exp3 += 1;
+                        game.data.exp3++;
                         game.data.exp -= 20;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp3 === 2 && game.data.exp >= 30){
-                        game.data.exp3 += 1;
+                        game.data.exp3++;
                         game.data.exp -= 30;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp3 === 3 && game.data.exp >= 40){
-                        game.data.exp3 += 1;
+                        console.log(game.data.exp);
+                        game.data.exp3++;
                         game.data.exp -= 40;
                         me.state.change(me.state.CHARSELECT);
                     }
                 }  
                 else if(action === "F4"){
                     if(game.data.exp4 === 0 && game.data.exp >= 10){
-                        game.data.exp4 += 1;
+                        game.data.exp4++;
                         game.data.exp -= 10;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp4 === 1 && game.data.exp >= 20){
-                        game.data.exp4 += 1;
+                        game.data.exp4++;
                         game.data.exp -= 20;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp4 === 2 && game.data.exp >= 30){
-                        game.data.exp4 += 1;
+                        game.data.exp4++;
                         game.data.exp -= 30;
                         me.state.change(me.state.CHARSELECT);
                     }
                     else if(game.data.exp4 === 3 && game.data.exp >= 40){
-                        game.data.exp4 += 1;
+                        game.data.exp4++;
                         game.data.exp -= 40;
                         me.state.change(me.state.CHARSELECT);
                     }

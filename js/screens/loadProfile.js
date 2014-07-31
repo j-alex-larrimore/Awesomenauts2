@@ -8,7 +8,8 @@ game.LoadProfile = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
-	onResetEvent: function() {	
+	onResetEvent: function() {
+            document.getElementById("state").innerHTML = "2";
             me.game.world.addChild( new me.SpriteObject (0, 0, me.loader.getImage('load')), -10);
            // me.input.bindPointer(me.input.mouse.LEFT, "select");
             console.log("LoadProfile");
@@ -19,8 +20,10 @@ game.LoadProfile = me.ScreenObject.extend({
                 me.input.unbindKey(me.input.KEY.Q);
                 me.input.unbindKey(me.input.KEY.W);
                 me.input.unbindKey(me.input.KEY.E);
+                me.input.unbindKey(me.input.KEY.TAB);
             
             document.getElementById("input").style.visibility = "visible";
+            document.getElementById("load").style.visibility = "visible";
             
             me.game.world.addChild( new (me.Renderable.extend ({
                         init: function(){
@@ -47,6 +50,7 @@ game.LoadProfile = me.ScreenObject.extend({
 	 */
 	onDestroyEvent: function() {
             document.getElementById("input").style.visibility = "hidden";
+            document.getElementById("load").style.visibility = "hidden";
 		//me.input.unbindPointer(me.input.mouse.LEFT); // TODO
 	}
 });

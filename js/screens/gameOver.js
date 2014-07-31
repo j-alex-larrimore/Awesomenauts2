@@ -15,13 +15,23 @@ game.GameOver = me.ScreenObject.extend({
                game.data.exp = game.data.exp + 10;
            }
            else{
-               game.data.exp = game.data.exp + 1;
+               game.data.exp++;
            }
-           me.save.exp = game.data.exp;
-           me.save.exp1 = game.data.exp1;
-           me.save.exp2 = game.data.exp2;
-           me.save.exp3 = game.data.exp3;
-           me.save.exp4 = game.data.exp4;
+//           me.save.exp = game.data.exp;           Awesomenauts 1 saving
+//           me.save.exp1 = game.data.exp1;
+//           me.save.exp2 = game.data.exp2;
+//           me.save.exp3 = game.data.exp3;
+//           me.save.exp4 = game.data.exp4;
+           
+           document.getElementById("exp").value = game.data.exp;            //Awesomenauts 2 saving
+           document.getElementById("exp1").value = game.data.exp1;
+           document.getElementById("exp2").value = game.data.exp2;
+           document.getElementById("exp3").value = game.data.exp3;
+           document.getElementById("exp4").value = game.data.exp4;
+           
+           console.log(game.data.exp + " " + document.getElementById("exp").value);
+           
+           document.getElementById("save").style.visibility = "visible";
            
             me.game.world.addChild(new (me.Renderable.extend ({
                 init: function(){
@@ -100,6 +110,7 @@ game.GameOver = me.ScreenObject.extend({
 	 *  action to perform when leaving this screen (state change)
 	 */
 	onDestroyEvent: function() {
+            document.getElementById("save").style.visibility = "hidden";
 		//me.input.unbindPointer(me.input.mouse.LEFT); // TODO
 	}
 });

@@ -15,13 +15,13 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 //me.audio.playTrack("oldschool");
                 
-                if(me.save.exp != null){
-                    console.log("Loading exp = " + me.save.exp);
-                    game.data.exp = me.save.exp;
-                }
-                else{
-                    console.log("no save data");
-                }
+//                if(me.save.exp != null){                          //Awesomenauts 1
+//                    console.log("Loading exp = " + me.save.exp);
+//                    game.data.exp = me.save.exp;
+//                }
+//                else{
+//                    console.log("no save data");
+//                }
                 game.data.gold = 10;
                 
 		this.HUD = new game.HUD.Container();
@@ -33,6 +33,9 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.input.bindKey(me.input.KEY.Q, "Q");
                 me.input.bindKey(me.input.KEY.W, "W");
                 me.input.bindKey(me.input.KEY.E, "E");
+                me.input.bindKey(me.input.KEY.TAB, "toggleMap");
+                
+                
                 
 	},
 

@@ -8,8 +8,7 @@ var game = {
                 //minimap: new game.HUD.MiniMap(300, 10, me.loader.getImage("miniMap2")),
                 username: "",       //username, password, exp are the variables being saved/loaded
                 password: "",
-                character: "",        
-                exp: 0,
+                character: "",    
                 gold: 0,
                 minimap: "",
 		score : 0,
@@ -49,15 +48,15 @@ var game = {
                 orcBaseHealth: 100,
                 orcBaseDamage: 10,
                 orcBaseSpeed: 5,
-                orcBaseDef: 0,
+                orcBaseDef: 0,    
+                exp: 0,
                 exp1: 0,
                 exp2: 0,
                 exp3: 0,
-                exp4: 0
+                exp4: 0,
+                state: 0
                 
 	},
-	
-        
 	
 	// Run on page load.
 	"onload" : function () {
@@ -148,8 +147,17 @@ var game = {
                 me.input.bindKey(me.input.KEY.W, "W");
                 me.input.bindKey(me.input.KEY.E, "E");
                 me.input.bindKey(me.input.KEY.DOWN, "down");
-            
+                
             // Start the game.
-		me.state.change(me.state.MENU);  
+                if(document.getElementById("state").innerHTML == "3"){
+                    me.state.change(me.state.SPENDEXP);
+                }
+                else if(document.getElementById("state").innerHTML == "4"){
+//                    me.state.change(me.state.SPENDEXP);
+                    me.state.change(me.state.SPENDEXP);
+                }
+                else{
+                    me.state.change(me.state.MENU);
+                }
 	}
 };

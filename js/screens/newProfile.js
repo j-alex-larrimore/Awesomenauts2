@@ -8,18 +8,23 @@ game.NewProfile = me.ScreenObject.extend({
 	/**	
 	 *  action to perform on state change
 	 */
-	onResetEvent: function() {	
+	onResetEvent: function() {
+            document.getElementById("state").innerHTML = "1";
+            
             me.game.world.addChild( new me.SpriteObject (0, 0, me.loader.getImage('new')), -20);
            // me.input.bindPointer(me.input.mouse.LEFT, "select");
             console.log("NewProfile");
-            document.getElementById("input").style.visibility = "visible";
+            document.getElementById("input").style.visibility = "visible";  //NEED THIS
+            document.getElementById("passAgain").style.visibility = "visible";  //NEED THIS
+            document.getElementById("register").style.visibility = "visible";  //NEED THIS
             
-            me.input.unbindKey(me.input.KEY.P);
+                me.input.unbindKey(me.input.KEY.P);
                 me.input.unbindKey(me.input.KEY.A);
                 me.input.unbindKey(me.input.KEY.B);
                 me.input.unbindKey(me.input.KEY.Q);
                 me.input.unbindKey(me.input.KEY.W);
                 me.input.unbindKey(me.input.KEY.E);
+                me.input.unbindKey(me.input.KEY.TAB);
                 
       
                 
@@ -39,18 +44,19 @@ game.NewProfile = me.ScreenObject.extend({
                     
            this.userName = "";
            this.PW = "";
+           this.exp1 = 0;
                     
  
-                
-                me.input.bindKey(me.input.KEY.ENTER, "ENTER", true);
-                
-                this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
-                    if (action === "ENTER") {
-                        this.userName = document.data.Username.value;
-                        this.PW = document.data.Password.value;
-                        console.log("Enter! + " + this.userName + " " + this.PW);
-                    }
-                });
+ //Old version of handling data               
+//                me.input.bindKey(me.input.KEY.ENTER, "ENTER", true);
+//                
+//                this.handler = me.event.subscribe(me.event.KEYDOWN, function (action, keyCode, edge) {
+//                    if (action === "ENTER") {
+//                        this.userName = document.data.Username.value;
+//                        this.PW = document.data.Password.value;
+//                        console.log("Enter! + " + this.userName + " " + this.PW);
+//                    }
+//                });
 	},
                 
 	
@@ -59,7 +65,9 @@ game.NewProfile = me.ScreenObject.extend({
 	 */
 	onDestroyEvent: function() {
             document.getElementById("input").style.visibility = "hidden";
-            me.input.unbindKey(me.input.KEY.ENTER);
-		//me.input.unbindPointer(me.input.mouse.LEFT); // TODO
+            document.getElementById("passAgain").style.visibility = "hidden";
+            document.getElementById("register").style.visibility = "hidden";
+          //  me.input.unbindKey(me.input.KEY.ENTER); Old version
+		//me.input.unbindPointer(me.input.mouse.LEFT); // Awesomenauts 1
 	}
 });
