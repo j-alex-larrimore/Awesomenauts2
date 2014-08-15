@@ -1498,7 +1498,12 @@ game.ArrowEntity = me.ObjectEntity.extend({
         this.attack = dmg;
         this.range = rng;
         this.startX = x;
-        this.endX = (this.startX + rng);
+        if(dir === "right"){
+            this.endX = (this.startX + rng);
+        }
+        else{
+            this.endX = (this.startX - rng);
+        }
         this.facing = dir;
         this.team = team;
         this.lastPosX = x;
@@ -1562,7 +1567,7 @@ game.ArrowEntity = me.ObjectEntity.extend({
                 this.stuck = true;
             }
             
-            if(this.pos.x >= this.endX || (this.pos.x === this.lastPosX && (this.now - this.last > 200) && this.stuck === true)){
+            if(((this.pos.x >= this.endX && this.facing ==="right") || (this.pos.x <= this.endX && this.facing ==="left")) || (this.pos.x === this.lastPosX && (this.now - this.last > 200) && this.stuck === true)){
                 me.game.world.removeChild(this);
             }
             
